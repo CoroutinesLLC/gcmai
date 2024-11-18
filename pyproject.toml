@@ -1,4 +1,33 @@
-[build-system]
-requires = ["setuptools>=42", "wheel"]
-build-backend = "setuptools.build_meta"
+[tool.poetry]
+name = "gcmai"
+version = "0.1.0"
+description = "A CLI tool that writes commits for you"
+authors = ["Reddy Tintaya <reddy.tintaya.dev@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/CoroutinesLLC/gcmai"
+repository = "https://github.com/CoroutinesLLC/gcmai"
+keywords = ["cli", "pipx", "example"]
 
+[tool.poetry.dependencies]
+python = "^3.11"
+python-inquirer = "^1.0.3"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.0"
+flake8 = "^7.1.1"
+isort = "^5.13.2"
+black = "^24.10.0"
+flake8-pyproject = "^1.2.3"
+
+[tool.poetry.scripts]
+gcmai = "gcmai.cli:main"
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+known_third_party = ["inquirer"]
